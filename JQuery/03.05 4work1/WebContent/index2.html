@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- 테이블로 열맞추면된다. (radio는 colspan으로 맞춰주기-->
+<h1>송부정보의 입력</h1>
+
+<form id="sendForm">        
+<table>
+<tr>
+	<th>이름</th><td><input type="text" size="10px" id="_name" name="name"></td>
+</tr>
+<tr>
+	<th>우편번호</th><td><input type="text" name="posNum1" id="_postNum1" size="10px" maxlength="3"">-
+						<input name="posNum2" id="_postNum2" type="text" size="10px" maxlength="4"></td>
+				<td><button type="button">주소변환</button></td>
+</tr>
+<tr>
+	<th>주소</th><td><textarea rows="2" cols="50" name="adress" id="_adress"></textarea></td>
+</tr>
+<tr>
+	<th>전화번호</th><td><input type="text" name="phoneNum" id="_phoneNum1" size="10px" maxlength="4">-
+<input type="text"  name="phoneNum" id="_phoneNum2" size="10px" maxlength="3">-
+<input type="text"  name="phoneNum" id="_phoneNum3" size="10px" maxlength="3"></td>
+</tr>
+<tr>
+	<th>배달시간</th><td><select name="time" id="_time" multiple="multiple">
+							<option value="0" selected="selected">지정하지 않음</option>	<!-- 값 안넣어주면 nullpointexeption 걸림 -->
+							<option value="10시-12시">10:00 ~ 12:00</option>
+							<option value="12시-15시">12:00 ~ 15:00</option>
+							<option value="15시-17시">15:00 ~ 17:00</option>
+							<option value="17시-20시">17:00 ~ 20:00</option>
+						</select></td>
+</tr>
+<tr>
+	<th>영수증 요청</th><td><input type="checkbox" name="receipt" id="_receipt" value="checked"></td>
+</tr>
+<tr>
+	<th>매거진 수신</th><td><input type="radio" name="magazin" id="_magazin" value="신청" checked="checked">신청
+							<input type="radio" name="magazin" id="_magazin" value="신청하지 않음">신청하지 않음</td>
+</tr>
+<tr>
+	<th></th><td align="right"><button type="button" id="btn">확인화면으로 진행</button></td>
+</tr>
+
+</table>
+</form>
+
+<script type="text/javascript">
+$(function (){
+	//제이쿼리나 자바스크립트로 다 검사하고 넘겨줘야 한다.(빈 값이 있거나 한 부분)
+	$('*').focus(function(){		//모든 resource *
+		$(this).css("background-color", "lightgrey");	//커서 입역시 배경바뀜
+	});
+	
+	$('*').blur(function(){		//모든 resource *
+		$(this).css("background-color", "white");	//커서 사라지면 배경다시 돌려짐
+	});
+	
+	
+	$("#btn").click(function(){
+		//주소 이름 반드시 기입(빈칸체크)
+		if($('#_name').val()==""){
+			alert("이름을 기입해 주세요.");
+			return;
+		}
+		else{
+			/*	location.href도 가능  :근데 하나씩 다 해줘야 된다.
+			location.href = "NewFile.jsp?"
+			
+			let name = $("#_name").val();
+			alert(name);
+			
+			let postNum1 = $("#_postNum1").val();	
+			alert(postNum1);
+			
+			let postNum2 = $("#_postNum2").val();	
+			alert(postNum2);
+						
+			let address = $("#_address").val();
+			alert(address);
+
+			let trans = $("#_trans").val();
+			alert(trans);
+			
+			let money = $("#_money").val();
+			alert(money);
+			
+			let maga = $("#_maga").val();
+			alert(maga);
+		*/	
+		//	location.href = "NewFile.jsp?name=" + $("#_name").val()
+				
+		//	$("#sendFrm").attr("action", "NewFile.jsp").submit();	
+			$("#sendForm").attr("action", "NewFile.jsp");	//이것만 가지고는 안가 + .submit으로 호출해야 한다.
+			$("#sendForm").attr("target", "blank");	//열 위치 선정(새로운 창blank이냐 기존 창이냐_self)
+			$("#sendForm").submit();	//나눠서도 가능(실제로 이동하는 방법)
+		}
+		
+		
+	});
+	
+});
+
+
+</script>
+</body>
+</html>

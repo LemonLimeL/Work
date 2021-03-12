@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+body{
+	background-color: black;
+	color: white;
+}
+.imgC{
+ 	width: 600px;
+ 	height: 900px;
+	border-style : solid;
+	border-width: 7px;
+	border-color: orange;
+	float: left;
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+<h1>사진들</h1>
+
+<div align="center">
+<table>
+	<tr>
+		<td>
+			<img name="photo" class="imgC" alt="" src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84387/84387_1000.jpg">
+		</td>
+		<td valign="top">
+			<form name="frm">
+				<select id="picture" onchange="imgS()">
+					<option selected disabled>영화</option>
+					<option value="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84273/84273_320.jpg">미나리</option>
+					<option value="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84277/84277_320.jpg">중경삼림</option>
+					<option value="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84341/84341_320.jpg">hope</option>
+				</select>
+				<!-- 이미지 파일로도 가능 
+				<select id="picture" onchange="imgS()">
+					<option selected disabled>사진의 선택</option>
+					<option value="images/pic01.jpg">사진1</option>
+					<option value="images/pic02.jpg">사진2</option>
+					<option value="images/pic03.jpg">사진3</option>
+					<option value="images/pic04.jpg">사진4</option>
+				</select>
+				 -->
+			</form>
+		</td>
+	</tr>
+</table>
+</div>
+
+<script type="text/javascript">
+
+function imgS(){
+	
+ 	let selIndex = document.frm.picture.selectedIndex;
+	
+ 	if(selIndex != 0){
+ 		document.photo.src = document.frm.picture.options[selIndex].value;
+ 	}
+}
+
+
+
+</script>
+
+</body>
+</html>

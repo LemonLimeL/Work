@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+th{
+	height : 50px;
+	width: 70px;
+	background-color: green;
+	color: white;
+}
+.td1{
+	width: 200px;
+	text-align: center;
+}
+.td2{
+	width: 70px;
+	text-align: center;
+}
+
+</style>
+</head>
+<body>
+
+<h1>포털 사이트</h1>
+<p>"열기"버튼을 클릭하면 해당 홈페이지를 새 창에서 볼 수 있습니다.</p>
+<table border = "1">
+	<tr>
+		<th>네이버</th><td class="td1">http://www.naver.com</td><td class="td2"><button type="button" onclick="func('naver')">열기</button>
+	</tr>
+	<tr>
+		<th>다음</th><td class="td1">http://www.google.com/</td><td class="td2"><button type="button" onclick="func('google')">열기</button>
+	</tr>
+	<tr>
+		<th>줌</th><td class="td1">http://zum.com/</td><td class="td2"><button type="button" onclick="func('zum')">열기</button>
+	</tr>
+</table>
+<script type="text/javascript">
+
+function func( name ){
+
+	location.href="http://www."+name+".com/";
+}
+
+//내용이 많아지면 id로 안하고 nodelist로 카운트해서 하는 것이 편하다.
+</script>
+</body>
+</html>

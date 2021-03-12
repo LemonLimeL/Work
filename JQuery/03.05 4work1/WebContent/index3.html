@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1>room image</h1>
+<img alt="" src="./image/photo_a.jpg" id="pic">
+<script type="text/javascript">
+$(document).ready(function() {	//$(function(){ 도 가능
+	
+	let num = 0;
+	
+	$('img').click(function() {
+		if(num==0){
+			$(this).attr("src", "./image/photo_b.jpg");
+			num = 1;
+		}
+		else{
+			$(this).attr("src", "./image/photo_a.jpg");		
+			num = 2;
+		}
+	});
+	
+	$("#pic").hover	//학습지사이트에서 잠깐 답을 보고싶을 때
+		function () {	//mouseover
+			$(this).attr("src", "./image/photo_b.jpg");
+		}
+		function () {	//mouseout
+			$(this).attr("src", "./image/photo_a.jpg");
+		}
+	);
+});
+
+</script>
+
+</body>
+</html>

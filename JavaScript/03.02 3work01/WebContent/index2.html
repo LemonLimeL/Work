@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h2>문제</h2>
+<p>한국에서 제일 높은 산은?</p>
+
+답:<input type="text" id="Intext">
+
+<input type="button" value="해답" onclick="mountain()">
+
+
+<script type="text/javascript">
+function mountain(){
+	let mountain = document.getElementById("Intext").value;
+	if(mountain == ""){	//문자열이 비어있다면
+		alert('정답을 기입해주십시오');
+	}
+	else if(mountain == "한라산"){
+		alert('정답입니다.');
+	}else{
+		document.getElementById("Intext").value = "";	//틀렸으면 값을 지워주기
+		alert('정답이 아닙니다.');
+		
+		
+	}
+	
+} 
+
+</script>
+</body>
+
+</html>

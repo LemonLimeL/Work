@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style type="text/css">
+#q32_box {
+ position:relative;
+ height:250px;
+}
+#q32 {
+ width:150px;
+ height:150px;
+ background:#F0F;
+ position:absolute;
+}
+</style>
+
+</head>
+<body>
+
+<div id="q30">
+	<img src="p2.jpg">
+</div>
+
+<ul class="eee">
+	<li>리스트1</li>
+	<li>리스트2</li>
+	<li>리스트3</li>
+	<li>리스트4</li>
+	<li>리스트5</li>
+	<li>리스트6</li>
+</ul>
+<p id="q31"></p>
+
+<div id="q32_box">
+	<div id="q32">뭔데</div>
+</div>
+
+<div id="q33"></div>
+
+
+
+<script type="text/javascript">
+
+
+$(document).ready(function () {
+	
+	$("#q30 img").attr({"width":"300px", "height":"500px"});
+	
+	let lengthT = $('.eee li').length;	
+	$('#q31').text("li태그의 수는 "+lengthT+"개");
+	
+	$('.eee li').click(function(){
+		
+		let count = $(this).index();
+		$('#q31').text("해당 li태그는 "+(count+1)+"번째 입니다.");
+		
+	});
+	
+	$("#q32").click(function () {
+		
+		$("#q32").attr("right", "500");
+	});
+	
+	let grade = prompt(점수를 입력헤 주세요);
+	if(grade.match(/[^0-9]/g)==true){
+		alert("숫자만 입력해 주십시오");
+	}
+	else{
+		if(grade >= 70){
+			$("#q33").html("<h3>합격입니다.</h3>(합격은 70점 이상 불합격은 75점 이하입니다.)")
+		}
+		else{
+			$("#q33").html("<h3>불합격입니다.</h3>(합격은 70점 이상 불합격은 75점 이하입니다.)")
+		}
+	}
+
+	
+	
+});
+
+$(window).resize(function(){
+	
+	$('#q30 img').attr({"width":"30px", "height":"50px"});
+});
+
+
+
+</script>
+</body>
+</html>

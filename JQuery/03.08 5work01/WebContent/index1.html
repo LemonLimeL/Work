@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.aaa{
+ 	color:#f00;
+}
+.ccc{
+	padding: 10px;
+	border: #000 2px solid;
+	background-color: red;
+}
+.q16_a{
+	text-decoration: underline;
+	color:#00f;
+}
+.q19_b{
+	text-decoration: underline;
+	color:#00f;
+}
+#q20{
+	background: #cce6d4;
+	width: 100px;
+	height: 100px;
+}
+.button {
+ padding: 5px 10px;
+ border:#666 solid 1px;
+ background:#FFF;
+ display:block;
+ width:100px;
+ text-align:center;
+ }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+<p id="q01">Hello JQuery</p>
+<p id="q02">Hello JQuery</p>
+<p id="q03"></p>
+<p id="q04">하이</p>
+
+<ul id="q05">
+	<li>리스트1</li>
+	<li>리스트2</li>
+	<li>리스트3</li>
+</ul>
+
+<ul id="q06">
+	<li>리스트1</li>
+	<li>리스트2</li>
+	<li>리스트3</li>
+</ul>
+
+<p id="q07" style="color: purple">Hello World</p>
+<h3 id="q08"></h3>
+
+<p id="q09">반드시</p>
+
+<ul id="q11">
+	<li>커피</li>
+</ul>
+
+<p id="q13">최선을 다해서</p>
+
+<div class="ccc">
+	<p id='q14'>최선을 다해서</p>
+</div>
+
+<p class="q15">가가가</p>
+<p class="q15">나나나</p>
+<p class="q15">다다다</p>
+
+<p class="q16">Q16</p>
+
+<p class="q17"><a href="#">aaa</a></p>
+<p><a href="#">bbb</a></p>
+<p class="q17"><a href="#">ccc</a></p>
+<p><a href="#">ddd</a></p>
+<p class="q17"><a href="#">eee</a></p>
+
+<p class="q18"><a href="#">AAA</a></p>
+<p><a href="#">BBB</a></p>
+<p class="q18"><a href="#">CCC</a></p>
+<p><a href="#">DDD</a></p>
+<p class="q18"><a href="#">EEE</a></p>
+
+<p class="q19_a">q19</p>
+
+<form>
+	<input type="text" value="입력하지 마십시오">
+</form>
+
+<p id="q20">q20</p>
+
+<p class="button">버튼</p>
+<ul id="q21">
+	<li>리스트1</li>
+	<li>리스트2</li>
+	<li>리스트3</li>
+</ul>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#q01").css("color", "red");
+
+	$("#q02").css({"color":"blue",
+				   "background-color":"yellow"
+				 });
+	
+	$('#q03').text("JQuery");
+	
+	$("#q04").html("<a href='#'>안녕하세요</a>");
+	
+	$('#q05').addClass("aaa");
+	
+	$("#q06 li").click(function(){
+		
+		$(this).remove();
+		
+	});
+	
+	$('#q08').wrap("#q07");
+	
+	
+	$('#q02').removeAttr("style");	
+	$('#q02').wrap("<div style='color:yellow; background-color:blue'></div>");
+	
+	$('#q09').prepend("<p id='q10' Tagname='내 이름은'>나는 성공한다</p>");
+	
+	
+	$('#q10').html("나는 성공한다."+$('#q10').attr("Tagname"));
+	
+	$("#q11").prepend("<li>홍차</li>");
+	$('#q11').append("<li>카푸치노</li>");
+	
+	$('#q13').wrap("<div class='ccc'></div>");
+	
+	$('#q14').unwrap("div.ccc");
+	
+	$('.q15').html("xxx");
+	
+	$('.q16').attr("class", "q16_a");	//클래스 변경(attr)
+	
+	$('.q17 a').removeAttr("href");
+	
+	$('.q18 a').attr("target", "_blank");
+	
+	$('.q19_a').attr("class", "q19_b");
+	
+	$('input').val("입력해 주십시오");
+	
+	$('#q20').prop({"width":"150px",
+		            "height":"300px"});
+	
+	$(".button").click(function(){
+		
+		$('#q21 li').remove();
+		
+	});
+});
+
+</script>
+
+</body>
+</html>

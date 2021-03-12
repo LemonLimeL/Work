@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>변수의 연산</h2>
+<p>a,b에 대해서 변수 a와 b의 계산 결과를 표시합니다.</p>
+<input type="button" value="덧셈" onclick="sum()">
+<input type="button" value="뻴셈" onclick="minus()">
+<input type="button" value="곱셈" onclick="multi()">
+<input type="button" value="나눗셈" onclick="divide()">
+<input type="button" value="나머지" onclick="rest()">
+<br><br>
+<input type="text" id="varA" size="20" value="">
+<input type="text" id="oper" size="10" value="">
+<input type="text" id="varB" size="20" value="">
+=<input type="text" id="result" size="30" value="">
+<script type="text/javascript">
+	let a, b;
+	
+	function getV(){
+		a = document.getElementById("varA").value;
+		b = document.getElementById("varB").value;
+	}
+	
+	function sum(){	
+		getV();
+		document.getElementById("oper").value = "+";
+		document.getElementById("result").value = parseInt(a) + parseInt(b);	
+	}
+	function minus(){
+		getV();
+		document.getElementById("oper").value = "-";
+		document.getElementById("result").value = parseInt(a) - parseInt(b);
+	}
+	function multi(){
+		getV();
+		document.getElementById("oper").value = "*";
+		document.getElementById("result").value = parseInt(a) * parseInt(b);
+	}
+	function divide(){
+		getV();
+		if(b == 0){
+			alert('계산할 수 없습니다.');
+			return;		//아래 내용 처리 안함
+		}
+		document.getElementById("oper").value = "/";
+		document.getElementById("result").value = trunc(parseInt(a) / parseInt(b), 3);
+	}
+	function rest(){
+		getV();
+		if(b == 0){
+			alert('계산할 수 없습니다.');
+			return;		//아래 내용 처리 안함
+		}
+		document.getElementById("oper").value = "mod";
+		document.getElementById("result").value = parseInt(a) % parseInt(b);
+	}
+	
+</script>
+</body>
+</html>

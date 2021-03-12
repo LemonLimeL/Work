@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>영어 설문 조사</title>
+</head>
+<body>
+
+<!-- user interface  -->
+
+<!-- name으로 넘어가는 모든 것들은 문자열로 넘어간다 -->
+
+<h1>설문조사</h1>
+
+<form action="NewFile.jsp">
+	이름:<input type="text" name="name" value="" size="30" title="이름을 입력해주십시오" placeholder="필수 기입"><br>
+	<br>
+	[질문1]<br>
+	영어로 대화할 수 있습니까?<br>
+	<input type="radio" name="answer" value="yes" checked>예<br>	<!-- checked만 해도 된다. -->
+	<input type="radio" name="answer" value="unknown">모르겠습니다<br>
+	<input type="radio"  name="answer" value="no">아니오<br>
+	<br>
+	[질문2]<br>
+	영어외에 관심이 있는 언어가 있으면 선택(복수 선택 가능)<br>
+	<input type="checkbox" name="language" value="독일어">독일어<br>
+	<input type="checkbox" name="language" value="중국어">중국어<br>
+	<input type="checkbox" name="language" value="프랑스어">프랑스어<br>
+	<br>
+	[질문3]<br>
+	영어 수업에 대한 의견이 있으시면 기입해 주십시오.<br>
+	<textarea style="overflow-y:scroll; width: 386px; height: 210px " name="opinion" value=""></textarea>
+	<br>
+	[질문4]<br>
+	당신의 연령을 선택해 주십시오.
+	<select name="age">
+		<option  value="10대">10대</option>
+		<option  value="20대">20대</option>
+		<option   value="30대">30대</option>
+		<option  value="40대">40대</option>
+		<option value="50대">50대</option>
+		<option   value="60대 이상">60대 이상</option>
+	</select><br>
+	
+	<div align="center">
+	<input type="submit" value="확인">	
+	</div>
+
+</form>
+
+</body>
+</html>

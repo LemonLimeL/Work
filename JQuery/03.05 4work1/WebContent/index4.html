@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<h1>사진들</h1>
+<img alt="" src="./image/img01.jpg" picname="성 자비에르 성당(외관)">	<!-- 사용자지정 name설정 가능(picname) 스탠다드태그보다는 사용자지정 속성이름으로-->
+<img alt="" src="./image/img02.jpg" picname="성 자비에르 성당(내부)">
+<img alt="" src="./image/img03.jpg" picname="은행">
+<img alt="" src="./image/img04.jpg" picname="가로등">
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	
+	$('img').click(function() {
+		let name = $(this).attr("picname");
+		alert("「"+name+"」"+"의 사진입니다.");
+		
+	});
+	
+});
+
+</script>
+</body>
+</html>

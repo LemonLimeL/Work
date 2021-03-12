@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	font-size: 25pt;
+	margin : 20px;
+}
+button{
+	margin-left: 10px;
+	width: 50px;
+	
+}
+</style>
+
+</head>
+<body>
+
+<h3>(문제)</h3>
+<p>다음 이차방정식의 해를 구하고, 그 버튼을 클릭하십시오</p>
+
+<div><b>x<sup>2</sup>-5x=-6</b></div>
+<button type="button" onclick="answer(1)">x = 1</button>
+<button type="button" onclick="answer(2)">x = 2</button>
+<button type="button" onclick="answer(3)">x = 3</button>
+<button type="button" onclick="answer(4)">x = 4</button>
+<button type="button" onclick="answer(5)">x = 5</button>
+<br><br>
+※올바른 답은 2개가 있습니다.
+
+<script type="text/javascript">
+
+function answer(num){
+	
+	let re = Math.pow(num,2) - (5 * num);
+	if(re == num){
+		alert("정답입니다.");
+	}
+	else{
+		alert("오답입니다. 다시 선택해 주세요.");
+	}
+	
+}
+
+</script>
+</body>
+</html>
